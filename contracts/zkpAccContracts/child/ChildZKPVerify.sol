@@ -11,8 +11,11 @@ contract ChildZKPVerify is IStateReceiver {
     mapping(uint256 => bool) public verification;
     uint256 public count;
 
-    constructor(address l2StateSenderAddress, address rootZKPVerifyContractAddress) {
+    constructor(address l2StateSenderAddress) {
         l2StateSender = IStateSender(l2StateSenderAddress);
+    }
+
+    function initialize(address rootZKPVerifyContractAddress) public {
         rootZKPVerifyContract = rootZKPVerifyContractAddress;
     }
 

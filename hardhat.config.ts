@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
   networks: {
     root: {
       url: process.env.ROOT_RPC || "",
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.ROOT_PRIVATE_KEY !== undefined ? [process.env.ROOT_PRIVATE_KEY] : [],
     },
     rootTest: {
       url: process.env.ROOT_TEST_RPC || "",
@@ -50,7 +50,10 @@ const config: HardhatUserConfig = {
   },
   gasReporter: {
     enabled: (process.env.REPORT_GAS as unknown as boolean) || false,
+    outputFile: "gas-report.txt",
+    noColors: true,
     currency: "USD",
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
   },
   etherscan: {
     apiKey: {
@@ -65,7 +68,7 @@ const config: HardhatUserConfig = {
   },
   dodoc: {
     // uncomment to stop docs from autogenerating each compile
-    // runOnCompile: false,
+    runOnCompile: false,
   },
 };
 

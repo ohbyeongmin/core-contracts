@@ -11,8 +11,11 @@ contract RootZKPVerify is IL2StateReceiver {
 
     event FinishedVerification(bool indexed verification);
 
-    constructor(address stateSenderAddress, address childZKPVerifyContractAddress) {
+    constructor(address stateSenderAddress) {
         stateSender = IStateSender(stateSenderAddress);
+    }
+
+    function initialize(address childZKPVerifyContractAddress) public {
         childZKPVerifyContract = childZKPVerifyContractAddress;
     }
 
