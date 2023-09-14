@@ -3,6 +3,7 @@ import "@openzeppelin/hardhat-upgrades";
 import "@primitivefi/hardhat-dodoc";
 import * as dotenv from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
+import "hardhat-deploy";
 
 dotenv.config();
 
