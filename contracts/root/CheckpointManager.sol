@@ -122,6 +122,7 @@ contract CheckpointManager is ICheckpointManager, Initializable {
         return leaf.checkMembership(leafIndex, eventRoot, proof);
     }
 
+    // test
     /**
      * @inheritdoc ICheckpointManager
      */
